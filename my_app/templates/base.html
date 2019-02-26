@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Flask Base Template </title>
+        <link href="{{ url_for('static',filename='css/materialize.min.css') }}" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="navbar-fixed">
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="#!" class="brand-logo right"> Logo </a>
+                            <ul class="left hide-on-med-and-down">
+                            <li class="active"><a href="#"> Admin </a></li>
+                            <li><a href="#"> Section </a></li>
+                            <li><a href="#"> History </a></li>
+                        </ul>
+                    </div>
+            </nav>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m4 l4"> </div>
+                <div class="col s12 m4 l4">
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}    
+                </div>
+                <div class="col s12 m4 l4"> </div>
+            </div>
+        </div>
+
+        <div >
+                {% block container %}{% endblock %}
+        </div>
+
+        <!-- modals -->
+
+          <!-- Modal Structure -->
+
+
+        <!-- end of modals -->
+
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+    </body>
+</html>
