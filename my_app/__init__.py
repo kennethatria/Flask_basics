@@ -13,6 +13,7 @@ db = SQLAlchemy(app)
 
 #from my_app.admin.models import Vehicle
 from my_app.auth.models import User, Permissions
+from my_app.admin.models import Vehicle, Client
 
 migrate = Migrate(app, db)
 
