@@ -6,6 +6,10 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(255))
     email = db.Column(db.String(255))
+    location = db.Column(db.String(255))
+    company = db.Column(db.String(255))
+    gender = db.Column(db.String(255))
+    photo_dir = db.Column(db.String(255))
     password_hash= db.Column(db.String(255))
 
     '''
@@ -37,4 +41,7 @@ class User(UserMixin, db.Model):
 class Permissions(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     admin = db.Column(db.Boolean())
+    client = db.Column(db.Boolean())
+    service_provider = db.Column(db.Boolean())
+    root = db.Column(db.Boolean())
 
