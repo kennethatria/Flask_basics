@@ -2,56 +2,144 @@
 
 {% block container %}
 
-    <div class="row">
-          <!-- table -->
-            <div class="col s12 m4 l3" style="background-color:#124750; height:100%"> 
+      <div class="container">
+            <div class="row"> <!-- parent row --> 
+                <div class="row"> <!-- function bar row -->
+                    <div class="col s12 m12 l12 center-align">
+                        <input type="text" name="search" placeholder="Search ... " class="roundsearchbar">
+                    </div>
+                </div> <!-- end of function bar row -->
 
-                <div class="collection">
-                        <a href="#!" class="collection-item">
-                            User Management
-                        </a>
-                        <a href="#!" class="collection-item"> Car Registration </a>
-                        <a href="#!" class="collection-item"> User Ratings </a>
-                        <a href="#!" class="collection-item"> User Requests </a>
-                        <a href="#!" class="collection-item"> Controls </a>
-                      
+                <div class="row">
+                  <div class="col s12 m12 l12">
+                    <div style="background-color:white;height: 7%;width: 100%; border-radius:5px; padding-top:2%; padding-left:5%" class="shadow-outside-bottom" >
+                        Message to Administrator 
+                    </div>
+                  </div>
                 </div>
-      
-            </div>
-      
-            <div class="col s12 m8 l9"> 
 
-                    <table>
-                            <thead>
-                              <tr>
-                                  <th>Name</th>
-                                  <th>Item Name</th>
-                                  <th>Item Price</th>
-                              </tr>
-                            </thead>
-                    
-                            <tbody>
-                              <tr>
-                                <td>Alvin</td>
-                                <td>Eclair</td>
-                                <td>$0.87</td>
-                              </tr>
-                              <tr>
-                                <td>Alan</td>
-                                <td>Jellybean</td>
-                                <td>$3.76</td>
-                              </tr>
-                              <tr>
-                                <td>Jonathan</td>
-                                <td>Lollipop</td>
-                                <td>$7.00</td>
-                              </tr>
-                            </tbody>
-                          </table>
-            </div>
-          <!-- end of table -->
+                <div class="row"> <!-- function chart row -->
 
-        
+                  <div col s12 m12 l12 class="">
+                      <span >  </span>
+                      <div class="row">
+                        <div class="col s12 m4 l4">
+                            <div class="box shadow-outside-bottom" style="padding-left: 2%; padding-top: 1%">
+                              <div> <b> Customers </b> <span> -0.06 </span>%</div>
+                              <div> <h5> 50 </h5> <span> </span></div>
+                              <div> <a href="#"> See all > </a> </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <div class="box shadow-outside-bottom" style="padding-left: 2%; padding-top: 1%">
+                                <div> <b> Incidents </b>  <span> -0.06 </span>% </div>
+                                <div> <h5> 50 </h5> <span> </span></div>
+                                <div> <a href="#"> See all > </a> </div>
+                            </div>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <div class="box shadow-outside-bottom" style="padding-left: 2%; padding-top: 1%">
+                                <div> <b> Feedback </b> <span> -0.06 </span>% </div>
+                                <div> <h5> 50 </h5> <span> </span></div>
+                                <div> <a href="#"> See all > </a> </div>
+                            </div>
+                        </div>
+                      </div>
+
+                  </div>
+                  
+                </div> <!-- end of chart row -->
+
+                <div class="row">
+
+                  <div class="col s12 m12 l12">
+                    <div style="height:5%; width:100%;background-color: white; border-radius: 10px" class="shadow-outside-bottom">
+                      <div class="row ">
+                        <div class="col s12 m4 l4" style="padding-left: 5%; padding-top:1%"> Recent Incidents </div>
+                        <div class="col s12 m4 l4"> </div>
+                        <div class="col s12 m4 l4" style="padding-left: 5%; padding-top:1%"> 
+                          
+                            <a style="height: 10%; width: 50%; background-color: white; border-radius: 10px; border: 5px solid #ebf6f9"> New Incident </a>  
+
+                        </div>
+                      </div>
+                    </div>
+                    <table style="background-color: white" class="center-align">
+                      <thead style="background-color:#eef7fa">
+                        <tr>
+                          <th> </th>
+                          <th> Customer </th>
+                          <th> Email </th>
+                          <th> Location </th>
+                          <th> Payment </th>
+                          <th> Incident  </th>
+                          <th> </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                            <form>
+                              <td>  
+                                  <label>
+                                      <input class="with-gap" name="group3" type="radio" id="user-radio-button"/>
+                                      <span> <a> </a></span>
+                                  </label>  
+                              </td>
+                              <td> Customer </td>
+                              <td> Email </td>
+                              <td> Kampala </td>
+                              <td>  <div class="center-align" style="height:15%;width:90%;background-color:#339933; border: 5px solid #ebf6f9; border-radius: 10px">  <i class="material-icons"> done </i>   </div> </td>
+                              <td> Engine </td>
+                              <td>  <a href="#"> <i class="material-icons"> more_vert </i>  </a> </td>
+                              </form>
+                            </tr>
+                            <tr>
+                                <form>
+                                  <td>  
+                                      <label>
+                                          <input class="with-gap" name="group3" type="radio" id="user-radio-button"/>
+                                          <span> <a> </a></span>
+                                      </label>  
+                                  </td>
+                                  <td> Customer </td>
+                                  <td> Arua </td>
+                                  <td> Product </td>
+                                  <td> <div class="center-align" style="height:15%;width:90%;background-color:#ffb366; border: 5px solid #ebf6f9 ; border-radius: 10px;padding-left: 5%"> <i class="material-icons"> schedule </i> </div> </td>
+                                  <td> Flat Tire </td>
+                                  <td> <i class="material-icons"> more_vert </i> </td>
+                                  </form>
+                                </tr>
+                                <tr>
+                                    <form>
+                                      <td>  
+                                          <label>
+                                              <input class="with-gap" name="group3" type="radio" id="user-radio-button"/>
+                                              <span> <a> </a></span>
+                                          </label>  
+                                      </td>
+                                      <td> Customer </td>
+                                      <td> Email </td>
+                                      <td> Mbale </td>
+                                      <td> <div class="center-align" style="height:15%;width:90%;background-color:#e0ebeb; border: 5px solid #eef7fa; border-radius: 10px;padding-left: 5%"> <i class="material-icons"> do_not_disturb </i>  </div> </td>
+                                      <td>  </td>
+                                      <td> <i class="material-icons"> more_vert </i> </td>
+                                      </form>
+                                    </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+            </div> <!-- end of parent row -->
+      </div>
+
+<script>
+        $(document).ready(function(){
+           $("#admin-section").removeClass("hide");
+           //$('#action-menu').removeClass('hide');
+           $('body').css('background-color', '#eef7fa');
+        });
+
+</script>
       
          
 

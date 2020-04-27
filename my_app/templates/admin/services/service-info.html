@@ -1,0 +1,122 @@
+{% extends 'base.html'%}
+
+{% block container %}
+
+<div class="">
+    <div class="row">
+        <div class="col s12 m12 l12 align-center">
+            <h4> Service Provider Details </h4>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col s12 m6 l6"> <!-- col one -->
+            
+            <div class="row"> <!-- col A row one -->
+                <div class="col s12 m12 l12" >
+                    <div style="border: 1px solid blue;border-radius:5px">
+                        
+                            <div class="" style="background-color: bisque; padding-left: 5%;padding-top:2%; height: 5%"> 
+                                    <div> Incident Information  </div>
+                            </div>
+
+                            <div style="padding:2%">
+                                    Location : <br>
+                                    Membership :  <br>
+                                    Defect :  <br>
+                                    Time : 
+
+                            </div>
+
+                                                                    
+
+                    </div>
+                </div>
+            </div> <!-- end of col A row one -->
+            <div class="row"> <!-- col A row two -->
+                <div class="col s12 m12 l12">
+                    <div style="border: 1px solid blue; ">
+
+                            <div class="" style="background-color: bisque; padding-left: 5%;padding-top:2%; height: 5%"> 
+                                    <div> Client Information  </div>
+                            </div>
+
+                            <div style="padding:2%">
+                                Username :  <br>
+                                Email :  <br>
+                                Member Number :  <br>
+                                Service Duration : 
+                            
+                            </div>
+                    </div>
+                </div> <!-- end of col A  row two -->
+            </div> <!-- end of col one -->
+            <div class="row"> <!-- col A row three -->
+                <div class="col s12 m12 l12" >
+                    <div style="border: 1px solid blue;">
+                        
+                            <div class="" style="background-color: bisque; padding-left: 5%;padding-top:2%; height: 5%"> 
+                                    <div> Billing Information  </div>
+                            </div>
+
+                            <div style="padding:2%">
+                                
+                                Mobile  :  <br>
+                                Member Number :  <br>
+                                Service Duration : 
+
+                            </div>
+
+                    </div>
+                </div>
+            </div> <!-- end of col A row three -->
+            
+        </div> 
+        <div class="col s12 m6 l6"> <!-- col two-->
+            <div class="row"> <!-- col B row one -->
+                    <div class="col s12 m12 l12">
+                            
+                            <div class="" style="background-color: bisque; padding-left: 5%;padding-top:2%; height: 5%"> 
+                                    <div> Vechile History  </div>
+                            </div>
+
+                            <div style="padding:2%">
+                                <ol>
+                                    <li> Plate Number: UAT 555 </li>
+                                    <li> Plate Number: UAT 555 </li>
+                                    <li> Plate Number: UAT 555 </li>
+                                    <li> Plate Number: UAT 555 </li>
+                                    <li> Plate Number: UAT 555 </li>
+                                </ol>
+                                
+
+                            </div>
+
+
+                        </div>
+                
+
+            </div> <!-- end of  col B row one -->
+            <div class="row"> <!-- row tow  -->
+                    <div class="col s12 m12 l12">
+                            
+                        </div>
+                
+
+            </div> <!-- end of row two -->
+        </div> <!-- end of col two -->
+    </div>
+</div>
+
+
+<script>
+        $(document).ready(function(){
+           $("#admin-section").removeClass("hide");
+           $('#action-menu').removeClass('hide');
+           $('#link-service').addClass("active")
+        });
+   
+</script>
+
+
+{% endblock %}

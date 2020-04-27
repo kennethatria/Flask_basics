@@ -2,6 +2,34 @@
     <head>
         <title>Flask Base Template </title>
         <link href="{{ url_for('static',filename='css/materialize.min.css') }}" rel="stylesheet">
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <style type="text/css">
+            .box{
+                width: 100%;
+                height: 15%;
+                background: #deeff5;
+                border: 1px solid #999;
+                border-radius: 5px;
+            }
+            .shadow-outside-bottom{
+                -moz-box-shadow:    0 10px 5px -5px #999;
+                -webkit-box-shadow: 0 10px 5px -5px #999;
+                box-shadow:         0 10px 5px -5px #999;
+            }
+            .roundsearchbar {
+                    
+                    height: 20px;
+                    width: 20px;
+                    z-index: 10;
+                    border-radius: 10px;
+                    border: none;
+                    background: #000; /* Set the bg image here. with "no-repeat" */
+            }
+        </style>
         
     </head>
     <body>
@@ -10,7 +38,7 @@
                     <div class="nav-wrapper">
                         <a href="#!" class="brand-logo right"> Logo </a>
                             <ul class="left hide-on-med-and-down">
-                            <li class="active"><a href="#"> Admin </a></li>
+                            <li class="active"><a href="{{ url_for('admin.home')}}"> Admin </a></li>
                             <li><a href="#"> Section </a></li>
                             <li><a href="#"> History </a></li>
                         </ul>
@@ -36,17 +64,67 @@
         </div>
 
         <div >
-                {% block container %}{% endblock %}
+            <div class="row">
+                    <div class="col s12 m4 l3 hide" id="admin-section" style="background-color:#124750; height:100%"> 
+
+                            <div class="collection">
+                                    <a id="link-clients" href=" {{ url_for('admin.clients')}} " class="collection-item"> Clients Management </a>
+                                    <a id="link-vechiles" href=" {{ url_for('admin.vechiles')}} " class="collection-item"> Vechile Registration </a>
+                                    <a id="link-feedback" href=" {{ url_for('admin.feedback')}} " class="collection-item"> Customer Feedback </a>
+                                    <a id="link-users-management" href=" {{ url_for('admin.users')}} " class="collection-item"> User Management </a>
+                                    <a id="link-service" href=" {{ url_for('admin.services')}} " class="collection-item"> Service Providers </a>
+                                    <a id="link-incidents" href=" {{ url_for('admin.incidents')}} " class="collection-item"> Incidents </a>
+
+                                    <!-- start of user dropdown 
+
+                                    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+
+                                     Dropdown Structure 
+                                    <ul id='dropdown1' class='dropdown-content'>
+                                      <li><a href="#!"> Add User </a></li>
+                                      <li><a href="#!"> Add User </a></li>
+                                      <li><a href="#!"> Add User </a></li>
+                                    </ul>
+                                    <!-- end -->
+                            </div>
+                  
+                        </div>
+                  
+                        <div class="col s12 m8 l9"> 
+                                <div class="container">
+                                                <div class="row hide" id="action-menu"> <!-- action menu bar -->
+
+                                                    <div class="col s12 m4 l4">
+                                                       
+                                                    </div>
+                                                    <div class="col s12  m4 l4">
+                                                        <a class="btn-small modal-trigger hide" id="action-bar-add-vechile" href="{{ url_for('admin.vechile_add')}}"> Add Vechile </a>                      
+                                                        <a class="btn-small modal-trigger hide" id="action-bar-add-incident" href="{{ url_for('admin.incident_add')}}"> Add Incident </a>
+                                                        <a class="btn-small modal-trigger hide" id="action-bar-add-client" href="{{ url_for('admin.client_add')}}"> Add Client </a>
+                                                        <a class="btn-small modal-trigger hide" id="action-bar-add-service" href="{{ url_for('admin.service_add')}}"> Add Service Provider </a>
+                                                        <a class="btn-small modal-trigger hide" id="action-bar-add-feedback" href="{{ url_for('admin.feedback_add')}}"> Add Feedback </a>
+                                                    </div>
+                                                    <div class="col s12  m4 l4">
+                                                            
+                                                        <a class="btn-small modal-trigger disabled hide" id="action-bar-edit-details" href="#modal-edit-client-vechile"> Edit Details </a>
+                                                    </div>
+                                                </div> <!-- end of action menu bar -->            
+                                </div>
+                                {% block container %}
+                                {% endblock %}
+                        </div>
+            </div>
+                
         </div>
 
         <!-- modals -->
 
-          <!-- Modal Structure -->
 
-
-        <!-- end of modals -->
-
-        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+        <script>
+                $(document).ready(function(){
+                  M.AutoInit();
+                    //$('.modal').modal();
+                  })
+        </script>
     </body>
 </html>

@@ -1,0 +1,113 @@
+{% extends 'base.html'%}
+
+{% block container %}
+
+      
+            <div class="container"> 
+
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  <!-- 
+                  <div class="row">
+
+                    <div class="col s12 m3 l3">
+                        <a class="btn-small modal-trigger" href="{{ url_for('admin.vechile_add')}}"> Add Vechile </a>
+                    </div>
+                    <div class="col s12  m3 l3">
+                        <a class="btn-small modal-trigger disabled"  href="#modal-edit-client-vechile"> Edit Details </a>
+                    </div>
+                    <div class="col s12  m3 l3">
+                        <a class="btn-small modal-trigger"  href="{{ url_for('admin.client_add')}}"> Add Client </a>
+                    </div>
+
+                  </div> -->
+                  
+                    <table>
+                        <thead>
+                          <tr>
+                              <th>Name</th>
+                              <th>Item Name</th>
+                              <th>Item Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for vechile in vechiles %}
+                          <tr>
+                            <td> {{ vechile.car_make }}  </td>
+                            <td> {{ vechile.body_type }} </td>
+                            <td> {{ vechile.year_of_make}} </td>
+                            <td> <a href="{{ url_for('admin.vechile_info',vechile = vechile.id)}}"class="btn"> View </a> </td>
+                            <td> <a href="{{ url_for('admin.vechile_edit',vechile_id = vechile.id)}}"class="btn"> Edit </a> </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                  
+                </div>
+              </div>
+
+
+            </div>
+          <!-- end of table -->
+
+          <!-- start of modals -->
+
+          <!-- end of modals -->
+
+          <script>
+    
+             $(document).ready(function(){
+                console.log('ready function')
+
+                $("#admin-section").removeClass("hide");
+                $('#action-menu').removeClass('hide');
+                
+                $('#link-vechiles').addClass("active")
+                $('#action-bar-add-vechile').removeClass('hide')
+
+             });
+
+             $("#vechiles-form").submit(function(e){
+                e.preventDefault();
+                console.log('name: '+$('#client_user').val())
+                var formData = new FormData();
+                formData.append('client_user',$('#client_user').val())
+                //formData.append('model',$('#model'))
+            /*formData.append('engine_size','katria')
+                formData.append('transmission','katria')
+                formData.append('manufacture_year','katria')
+                formData.append('registration_year','katria')
+                formData.append('mileage','katria')
+                formData.append('fuel','katria')
+                formData.append('social_number_plate','katria')*/
+                $.ajax({
+                  type: "POST",
+                  url: "{{ url_for('admin.vechiles') }}",
+                  data: formData,
+                  cache: false,
+                  processData: false,
+                  contentType: false,
+                  success: function(data,txtStatus){
+                    if(txtStatus == 'success'){
+                      console.log(txtStatus)
+                      instance.close();
+                    }else {
+                      console.log('error: ' + txtStatus)
+                      instance.close();
+                    }
+                  },
+                  error: function(e){
+                    console.log(e)
+                  }
+
+                })
+             });
+          </script>
+          
+
+        
+      
+         
+
+
+{% endblock %}

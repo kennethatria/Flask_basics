@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+{% block container %}
+<div class="container">
+
+        <div class="row">
+                <div class="col s12 m12 l12">
+                        <form id="user-form" method="POST" action="{{url_for('admin.client_edit', client_id = client.id) }}" role="form">
+                                <h3 class="center-align"> Edit User : {{ client.username }}</h3>
+                                <div class="form-group"> {{ form.csrf_token }} </div>
+                                    <div class="form-group">    
+                                        {{ form.username.label }} : {{  form.username( placeholder = client.username) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form.email.label }} : {{  form.email( placeholder = client.email) }}
+                                    </div>
+                                    <div class="form-group">
+                                            {{ form.telephone.label }} : {{  form.telephone( placeholder = client.telephone) }}
+                                    </div>
+                                    <div class="form-group">
+                                            {{ form.telephone_alternative.label }} : {{  form.telephone_alternative( placeholder = client.telephone_alternative) }}
+                                    </div>
+                                    <div class="form-group">
+                                            {{ form.location.label }} : {{ form.location( placeholder = client.location ) }}
+                                    </div>
+                                    <div class="form-group">
+                                            {{ form.dob.label }} : {{ form.dob( placeholder = client.dob ) }}
+                                    </div>
+                                    <div class="form-group">
+                                            {{ form.occupation.label }} : {{ form.occupation( placeholder = client.occupation) }}  
+                                    </div>
+                                    <div class="form-group">
+                                            {{ form.place_of_work.label }} : {{ form.place_of_work( placeholder = client.place_of_work) }}
+                                    </div>
+                                <div class="row" style="margin-top:50px">
+                                    <div class=" col s12 center-align" >
+                                        <button class="btn-small"> Submit</button>
+                                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>            
+                                    </div>
+                                </div>
+                            </form>
+                </div>
+        </div>
+</div>
+
+
+
+<script>
+        $(document).ready(function(){
+           $("#admin-section").removeClass("hide");
+           $('#action-menu').removeClass('hide');
+           $('#link-clients').addClass("active")
+        });
+   
+</script>
+
+
+{% endblock %}

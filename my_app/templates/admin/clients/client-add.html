@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+
+{% block container %}
+        <div class="row">
+                <div class="col s12 m2 l2"></div>
+                <div class="col s12 m8 l8">
+                     <h3 class="center-align"> Add Clients </h3>
+                <form id="user-form" method="POST" action="{{url_for('admin.client_add') }}" role="form">
+                    <div class="form-group"> {{ form.csrf_token }} </div>
+                        <div class="form-group">    
+                            {{ form.username.label }} : {{  form.username() }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.email.label }} : {{  form.email() }}
+                        </div>
+                        <div class="form-group">
+                                {{ form.telephone.label }} : {{  form.telephone() }}
+                        </div>
+                        <div class="form-group">
+                                {{ form.telephone_alternative.label }} : {{  form.telephone_alternative() }}
+                        </div>
+                        <div class="form-group">
+                                {{ form.location.label }} : {{ form.location() }}
+                        </div>
+                        <div class="form-group">
+                                {{ form.dob.label }} : {{ form.dob() }}
+                        </div>
+                        <div class="form-group">
+                                {{ form.occupation.label }} : {{ form.occupation() }}  
+                        </div>
+                        <div class="form-group">
+                                {{ form.place_of_work.label }} : {{ form.place_of_work() }}
+                        </div>
+                    <div class="row" style="margin-top:50px">
+                        <div class=" col s12 center-align" >
+                            <button class="btn-small"> Submit</button>
+                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>            
+                        </div>
+                    </div>
+                </form>
+                </div>
+                <div class="col s12 m2 l2"></div>
+        </div>
+
+        <script>
+                $(document).ready(function(){
+                   $("#admin-section").removeClass("hide");
+                   $('#action-menu').removeClass('hide');
+                   $('#link-clients').addClass("active")
+                });
+           
+        </script>
+
+
+
+
+{% endblock %}

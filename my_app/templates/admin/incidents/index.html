@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+
+{% block container %}
+
+<div class="row"> 
+    <div class="col s12 m2 l2"></div>
+    <div class="col sm12 m8 l8 center-align">
+        <h5> Incidents  </h5> 
+        <table>
+                <thead>
+                    <tr>
+                        <td>  Location </td>
+                        <td>  User  </td>
+                        <td>   </td>
+    
+                    </tr>
+                    <tbody>
+                        {% for incident in incidents %}
+                        <tr>
+                            <td> {{ incident.location }}</td>
+                            <td> {{ incident.defect }}</td>
+                            <td> {{ incident.photo_name }}</td>
+                            <td> <a href="{{url_for('admin.incident_edit', incident_id = incident.id )}}" class="btn"> Edit </a></td>
+                            <td> <a href="{{url_for('admin.incident_info', incident_id = incident.id )}}"> Info </a></td>
+                        </tr>
+                        {%  endfor %}
+                    </tbody>
+                </thead>
+            </table>
+    </div>
+    <div class="col s12 m2 l2"></div>
+</div>
+
+<script>
+        $(document).ready(function(){
+           $("#admin-section").removeClass("hide");
+           $('#action-menu').removeClass('hide');
+           $('#action-bar-add-incident').removeClass('hide')
+           $('#link-incidents').addClass("active")
+        });
+</script>
+
+{% endblock %}

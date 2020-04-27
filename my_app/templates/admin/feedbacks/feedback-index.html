@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+
+{% block container %}
+
+      
+            <div class="container"> 
+
+                <table>
+                    <thead>
+                        <tr>
+                            <td>  User </td>
+                            <td>  Rating </td>
+                            <td>  Location </td>
+        
+                        </tr>
+                        <tbody>
+                            {% for feedback in feedbacks %}
+                            <tr>
+                                <td> {{ feedback.user_id }} </td>
+                                <td> {{ feedback.rating }}</td>
+                                <td> {{ feedback.location }}</td>
+                                <td> {{ feedback.service_id }}</td>
+                                <td> <a href="{{ url_for('admin.feedback_edit',feedback_id = feedback.id )}}" class="btn"> Edit </a></td>
+                                <td> <a href="{{ url_for('admin.feedback_info', feedback_id = feedback.id )}}"> Info </a></td>
+                            </tr>
+                            {%  endfor %}
+                        </tbody>
+                    </thead>
+                </table>
+            </div>
+          <!-- end of table -->
+
+        
+          <script>
+            $(document).ready(function(){
+               $("#admin-section").removeClass("hide");
+               $('#action-menu').removeClass('hide');
+               $('#action-bar-add-feedback').removeClass('hide')
+               $('#link-feedback').addClass("active")
+            });
+    </script>    
+         
+
+
+{% endblock %}

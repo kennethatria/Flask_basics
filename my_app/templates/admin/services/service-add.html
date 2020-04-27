@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+{% block container %}
+        <div class="row">
+                <div class="col s12 m2 l2"></div>
+                <div class="col s12 m8 l8">
+                     <h3 class="center-align"> Add Service Provider </h3>
+                <form id="user-form" method="POST" action="{{url_for('admin.service_add') }}" role="form">
+                    <div class="form-group"> {{ form.csrf_token }} </div>
+                        <div class="form-group">    
+                            {{ form.name.label }} : {{  form.name() }}                         
+                        </div>
+                        <div class="form-group">                            
+                            {{ form.location.label }} : {{  form.location() }}                         
+                        </div>
+                        <div class="form-group">                         
+                                {{ form.service_type.label }} : {{  form.service_type() }}                           
+                            </div>
+                        <div class="form-group">
+                                {{ form.service_photo.label }} : {{ form.service_photo() }}                 
+                        </div>
+                        <div class="form-group">
+                                {{ form.operating_time.label }} : {{ form.operating_time() }}                 
+                        </div>
+                        <div class="form-group">
+                                {{ form.service_structure.label }} : {{ form.service_structure() }}                 
+                        </div>
+                        <div class="form-group">
+                                {{ form.account_manager.label }} : {{ form.account_manager() }}                 
+                        </div>
+                    <div class="row" style="margin-top:50px">
+                        <div class=" col s12 center-align" >
+                            <button class="btn-small"> Submit</button>
+                            <a href="{{ url_for('admin.services')}}" class="modal-close waves-effect waves-green btn-flat">Cancel</a>              
+                        </div>
+                    </div>
+                </form>
+                </div>
+
+                <div class="col s12 m2 l2"></div>
+        </div>
+
+        <script>
+                $(document).ready(function(){
+                   $("#admin-section").removeClass("hide");
+                   $('#link-service').addClass("active")
+                });
+           
+        </script>
+
+
+
+
+{% endblock %}

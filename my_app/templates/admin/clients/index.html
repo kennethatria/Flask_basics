@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+
+{% block container %}
+<div class="container">
+        <div class="row">
+    
+                <div class="col s12 m12 l12">
+            
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>  Name </td>
+                                <td>  Email </td>
+                                <td>  Telephone </td>
+            
+                            </tr>
+                            <tbody>
+                                {% for client in clients %}
+                                <tr>
+                                    <td> {{ client.username }}</td>
+                                    <td> {{ client.email }}</td>
+                                    <td> {{ client.telephone }}</td>
+                                    <td> <a href="{{ url_for('admin.client_edit',client_id = client.id )}}" class="btn"> Edit </a></td>
+                                    <td> <a href="{{ url_for('admin.client_info', client_id = client.id )}}"> Info </a></td>
+                                </tr>
+                                {%  endfor %}
+                            </tbody>
+                        </thead>
+                    </table>
+                    
+                </div>
+            </div>
+</div>
+
+
+<script>
+        $(document).ready(function(){
+           $("#admin-section").removeClass("hide");
+           $('#action-menu').removeClass('hide');
+
+                
+            $('#link-clients').addClass("active")
+            $('#action-bar-add-client').removeClass('hide')
+        });
+   
+</script>
+
+
+{% endblock %}

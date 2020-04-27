@@ -1,0 +1,71 @@
+{% extends 'base.html'%}
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+                <div class="col s12 m12 l12">
+                        <form class="col s12" id="vechiles-form" method="POST" action="{{url_for('admin.vechile_add') }}" role="form">
+                                <div class="form-group"> {{ form.csrf_token }} </div>
+                                <div class="row">
+                                    <div class="input-field col s6">            
+                                        {{ form.car_make() }}
+                                        <label for="icon_prefix"> {{ form.car_make.label }} </label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                    </div>
+                                </div>                                      
+                                <div class="row">
+                                    <div class="input-field col s6">               
+                                        {{ form.body_type() }}
+                                        <label for="icon_prefix"> {{ form.body_type.label }} </label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        
+                                        {{ form.registration_number() }}
+                                        <label for="icon_telephone"> {{ form.registration_number.label }}</label>
+                                    </div>
+                                </div>                          
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        
+                                        {{ form.chassis_number() }}
+                                        <label for="icon_prefix"> {{ form.chassis_number.label }} </label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        
+                                        {{ form.fuel_type() }}
+                                        <label for="icon_telephone"> {{ form.fuel_type.label }}</label>
+                                    </div>
+                                </div>                           
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        
+                                        {{ form.year_of_make() }}
+                                        <label for="icon_prefix"> {{ form.year_of_make.label }} </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                </div>                            
+                                <div class="row">
+                                    <div class=" col s12 center-align" >
+                                        <button class="btn-small"> Submit</button>
+                                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                                        
+                                    </div>
+                                </div>                      
+                            </form>
+
+                </div>
+        </div>
+    </div>
+<script>
+     $(document).ready(function(){
+        $("#admin-section").removeClass("hide");
+        $('#action-menu').removeClass('hide');
+        $('#link-vechiles').addClass("active")
+     });
+
+</script>
+
+
+{% endblock%}
